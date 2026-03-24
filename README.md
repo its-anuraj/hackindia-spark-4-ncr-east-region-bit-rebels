@@ -1,59 +1,59 @@
-# Enhanced Vite React TypeScript Template
+# 🚀 TeamForge AI
 
-This template includes built-in detection for missing CSS variables between your Tailwind config and CSS files.
+Smart AI-powered team formation platform that recommends the best team for projects based on skills, performance, and availability.
 
-## Features
+## ❗ Problem
 
-- **CSS Variable Detection**: Automatically detects if CSS variables referenced in `tailwind.config.cjs` are defined in `src/index.css`
-- **Enhanced Linting**: Includes ESLint, Stylelint, and custom CSS variable validation
-- **Shadcn/ui**: Pre-configured with all Shadcn components
-- **Modern Stack**: Vite + React + TypeScript + Tailwind CSS
+Companies struggle to assign the right people to the right projects. 
+Manual team selection leads to:
+- Poor productivity
+- Skill mismatch
+- Project delays
 
-## Available Scripts
+## 💡 Solution
+
+TeamForge AI uses intelligent algorithms to:
+- Analyze employee skills and experience
+- Evaluate availability and performance
+- Recommend the most optimal team for a project
+
+## ✨ Features
+
+- 🤖 AI-based team recommendation
+- 👨‍💼 Employee management system
+- 📊 Skill & performance tracking
+- ⚡ Smart project assignment
+- 📈 Productivity optimization
+
+  ## 🛠 Tech Stack
+
+- Frontend: React + Vite + Tailwind CSS
+- Backend: Node.js / Express
+- Database: MongoDB / Firebase
+- AI Logic: Custom scoring / ML model
+
+  ## ⚙️ How It Works
+
+1. Admin adds employee data (skills, role, experience)
+2. Project requirements are entered
+3. AI analyzes and matches best candidates
+4. System generates optimal team
+
+
+---
+
+### 8. Future Scope
+```md
+## 🔮 Future Scope
+
+- Real ML model integration
+- Performance prediction
+- AI-based team feedback system
+- subscription based plateform
+
+ ## 🚀 Run Locally
 
 ```bash
-# Run all linting (includes CSS variable check)
-npm run lint
+npm install
+npm run dev
 
-# Check only CSS variables
-npm run check:css-vars
-
-# Individual linting
-npm run lint:js    # ESLint
-npm run lint:css   # Stylelint
-```
-
-## CSS Variable Detection
-
-The template includes a custom script that:
-
-1. **Parses `tailwind.config.cjs`** to find all `var(--variable)` references
-2. **Parses `src/index.css`** to find all defined CSS variables (`--variable:`)
-3. **Cross-references** them to find missing definitions
-4. **Reports undefined variables** with clear error messages
-
-### Example Output
-
-When CSS variables are missing:
-```
-❌ Undefined CSS variables found in tailwind.config.cjs:
-   --sidebar-background
-   --sidebar-foreground
-   --sidebar-primary
-
-Add these variables to src/index.css
-```
-
-When all variables are defined:
-```
-✅ All CSS variables in tailwind.config.cjs are defined
-```
-
-## How It Works
-
-The detection happens during the `npm run lint` command, which will:
-- Exit with error code 1 if undefined variables are found
-- Show exactly which variables need to be added to your CSS file
-- Integrate seamlessly with your development workflow
-
-This prevents runtime CSS issues where Tailwind classes reference undefined CSS variables.
