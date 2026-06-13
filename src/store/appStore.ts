@@ -217,8 +217,14 @@ export const useAppStore = create<AppStore>((set) => ({
     notifications: s.notifications.map(n => ({ ...n, read: true }))
   })),
   
-  isAuthenticated: false,
-  currentUser: null,
+  isAuthenticated: true,
+  currentUser: {
+    id: 'admin_1',
+    name: 'Admin System',
+    email: 'ajsinghindolia@gmail.com',
+    passwordHash: bcrypt.hashSync('1234', 10),
+    role: 'admin'
+  },
   users: [
     {
       id: 'admin_1',

@@ -17,7 +17,7 @@ const NAVIGATION = [
 ]
 
 export function Sidebar() {
-  const { activePage, setActivePage, setIsAuthenticated, currentUser, setCurrentUser } = useAppStore()
+  const { activePage, setActivePage, currentUser, setCurrentUser } = useAppStore()
 
   const currentNav = NAVIGATION.filter(item => {
     if (['admin', 'ai-team-builder', 'risk-prediction'].includes(item.page)) {
@@ -73,16 +73,7 @@ export function Sidebar() {
             <p className="text-sm font-medium text-foreground truncate">{currentUser?.name || 'Authorized User'}</p>
             <p className="text-[10px] text-muted-foreground truncate" title={currentUser?.email}>{currentUser?.email}</p>
           </div>
-          <button 
-            onClick={() => {
-              setIsAuthenticated(false)
-              setCurrentUser(null)
-            }}
-            className="p-1.5 rounded-lg text-muted-foreground hover:bg-red-500/10 hover:text-red-500 transition-colors"
-            title="Log out"
-          >
-            <LogOut className="w-4 h-4" />
-          </button>
+
         </div>
       </div>
     </div>

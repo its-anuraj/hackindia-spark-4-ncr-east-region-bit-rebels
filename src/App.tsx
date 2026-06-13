@@ -10,7 +10,6 @@ import { RiskPrediction } from './pages/RiskPrediction'
 import { AIAssistant } from './pages/AIAssistant'
 import { AdminPanel } from './pages/AdminPanel'
 import { ChangePassword } from './pages/ChangePassword'
-import { Login } from './pages/Login'
 import { useAppStore } from './store/appStore'
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
@@ -34,13 +33,6 @@ export default function App() {
   const { activePage, isAuthenticated, currentUser } = useAppStore()
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false)
 
-  if (!isAuthenticated) {
-    return <Login />
-  }
-
-  if (currentUser?.isFirstLogin) {
-    return <ChangePassword />
-  }
 
   return (
     <div className="flex h-screen bg-background overflow-hidden">
